@@ -8,6 +8,7 @@ find_package(Curses REQUIRED)
 
 add_executable(games
 		src/main.cpp
+		src/games/snake/snake.cpp
 		src/games/snake/snake_logic.cpp
 )
 

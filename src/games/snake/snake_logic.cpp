@@ -35,6 +35,9 @@ void schritt(SnakeSpiel& spiel) {
     spiel.kopf.y = spiel.kopf.y + spiel.dy;
     spiel.kopf.x = spiel.kopf.x + spiel.dx;
 
+    spiel.letzteDy = spiel.dy;
+    spiel.letzteDx = spiel.dx;
+
     if(spiel.kopf.y < 0 || spiel.kopf.y > spiel.hoehe - 1 ||
        spiel.kopf.x < 0 || spiel.kopf.x > spiel.breite - 1) {
         spiel.verloren = true;
@@ -63,6 +66,9 @@ void schritt(SnakeSpiel& spiel) {
 }
 
 void setzeRichtung(SnakeSpiel& spiel, int dy, int dx) {
+    if(dy == -spiel.letzteDy && dx == -spiel.letzteDx) {
+        return;
+    }
     spiel.dy = dy;
     spiel.dx = dx;
 }

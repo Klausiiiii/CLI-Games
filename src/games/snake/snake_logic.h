@@ -12,6 +12,8 @@ struct SnakeSpiel {
     Punkt futter;
     int dy = 0;
     int dx = 1;
+    int letzteDy = dy;
+    int letzteDx = dx;
     std::size_t laenge = 5;
     int hoehe = 0;
     int breite = 0;
